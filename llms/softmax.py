@@ -21,5 +21,3 @@ class Activation_Softmax:
         # Aqui é feito o valor da probabilidade para cada input
         probabilities = exp_values / np.sum(exp_values, axis = 1, keepdims=True)
         self.output = probabilities
-
-
