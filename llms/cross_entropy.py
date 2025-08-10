@@ -1,7 +1,19 @@
 import numpy as np
 
-class Loss_CategoricalCrossentropy(Loss):
+class Loss_CategoricalCrossentropy:
 
+    def calculate(self, output, y):
+        # Calculate sample losses
+        sample_losses = self.forward(output, y)
+
+        # Calculate mean loss
+        data_loss = np.mean(sample_losses)
+
+        # Return loss
+        return data_loss
+
+
+        
     def forward(self, y_pred, y_true):
         samples = len(y_pred)
 
